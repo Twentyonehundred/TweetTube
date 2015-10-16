@@ -23,7 +23,7 @@ public class TwitterTask extends AsyncTask<String, Void, String[][]> {
     Context mContext;
     //ArrayList<String> tweets = new ArrayList<>();
     List<List<String>> tweets = new ArrayList<List<String>>(4);
-    String[][] returnTweets = new String[9][4];
+    String[][] returnTweets = new String[14][4];
     public TwitterTask(Context context) {
         mContext = context;
     }
@@ -60,7 +60,7 @@ public class TwitterTask extends AsyncTask<String, Void, String[][]> {
     }
 
     public void completed() {
-        if(v<=7) {
+        if(v<=12) {
             System.out.println("DBBG V IS EQUAL TO = "+v);
             loop = 0;
             System.out.println("DBBG 1 with line = "+line+" & v = "+v);
@@ -82,35 +82,33 @@ public class TwitterTask extends AsyncTask<String, Void, String[][]> {
                     line = "circleline";
                 else if (v == 7)
                     line = "hamandcityline";
+                else if (v == 8)
+                    line = "wlooandcityline";
+                else if (v == 9)
+                    line = "metline";
+                else if (v == 10)
+                    line = "LDNOverground";
+                else if (v == 11)
+                    line = "jubileeline";
+                else if (v == 12)
+                    line = "londondlr";
                 getTimeline();
             }
         } else {
-            for(int b=0;b<returnTweets.length;b++) {
-                for(int c=0;c<3;c++) {
-                    System.out.println("DEBBG ["+b+"]["+c+"] = " +returnTweets[b][c]);
-                }
-            }
             delegate.processFinish(returnTweets);
         }
     }
 
     public void getTweets() {
-
-        //line="burnie";
-        System.out.println("DBBG A 2 in getTweets with line = "+line+" & v= "+v);
         TwitterCore.getInstance().logInGuest(new Callback<AppSession>() {
-            //final UserTimeline userTimeline = new UserTimeline.Builder().screenName("fabric").build();
             @Override
             public void success(Result result) {
-                //AppSession session = (AppSession) result.data;
                 twitterApiClient = TwitterCore.getInstance().getApiClient();
-                //StatusesService statusesService = twitterApiClient.getStatusesService();
                 getTimeline();
             }
 
             @Override
             public void failure(TwitterException exception) {
-                // unable to get an AppSession with guest auth
             }
         });
     }
@@ -119,15 +117,11 @@ public class TwitterTask extends AsyncTask<String, Void, String[][]> {
         twitterApiClient.getStatusesService().userTimeline(null, line, null, null, null, null, true, null, false, new Callback<List<Tweet>>() {
             @Override
             public void success(Result<List<Tweet>> result) {
-                System.out.println("DBBG "+v+" in success with line = " + line + " & v= " + v + " & loop = " + loop + " & size = " + result.data.size());
                 for (Tweet t : result.data) {
-                    System.out.println("DBBG "+v+" in FOR LOOP with line = " + line + " & v= " + v + " & loop = " + loop + " & size = " + result.data.size());
                     if (loop < result.data.size() && loop < 3) {
-                        System.out.println("DBBG "+v+" adding NUMBER: " + v + " @ POSITION: " + loop + " - should be LINE: " + line + "<<<<<< tweet = " + t.text);
                         returnTweets[v][loop] = t.text;
                         loop++;
                     } else {
-                        System.out.println("DBBG "+v+" FINISHING");
                         loop++;
                         v++;
                         break;

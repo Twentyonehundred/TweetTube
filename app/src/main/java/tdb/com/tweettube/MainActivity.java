@@ -8,8 +8,6 @@ import android.view.Menu;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
-import java.util.Arrays;
-
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity implements AsyncResponse {
@@ -21,26 +19,8 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        //Fabric.with(this, new Twitter(authConfig));
-
-        //TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-
-        //Fabric.with(this, new Twitter(authConfig));
-
-        //UserTimeline userTimeline = new UserTimeline.Builder().screenName("fabric").build();
-
-
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new Twitter(authConfig));
-
-        //TwitterAuthToken authToken = new TwitterAuthToken(TWITTER_KEY, TWITTER_SECRET);
-        //OAuthSigning oauthSigning = new OAuthSigning(authConfig, authToken);
-
-
-        //TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        //Fabric.with(this, new Twitter(authConfig));
-        //TwitterApiClient twitterApiClient =  TwitterCore.getInstance().getApiClient();
         setContentView(R.layout.activity_main);
         twitterTask.delegate = this;
         twitterTask.execute();
@@ -62,15 +42,11 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
         data.putStringArray("bakerloo", output[5]);
         data.putStringArray("circle", output[6]);
         data.putStringArray("hamcity", output[7]);
-        System.out.println("QV4 C = " + Arrays.toString(output[0]));
-        System.out.println("QV4 N = "+ Arrays.toString(output[1]));
-        System.out.println("QV4 P = "+ Arrays.toString(output[2]));
-        System.out.println("QV4 V = "+ Arrays.toString(output[3]));
-        System.out.println("QV4 D = "+ Arrays.toString(output[4]));
-        System.out.println("QV4 B = "+ Arrays.toString(output[5]));
-        System.out.println("QV4 I = "+ Arrays.toString(output[6]));
-        System.out.println("QV4 H = "+ Arrays.toString(output[7]));
-
+        data.putStringArray("waterloo", output[8]);
+        data.putStringArray("met", output[9]);
+        data.putStringArray("overground", output[10]);
+        data.putStringArray("jubilee", output[11]);
+        data.putStringArray("dlr", output[12]);
 
         Intent intent = new Intent(MainActivity.this, ExpandableExampleActivity.class);
         intent.putExtras(data);

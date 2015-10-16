@@ -33,7 +33,6 @@ public class ExpandableExampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_demo);
 
         if (savedInstanceState == null) {
-            System.out.println("yoyoyo 9");
             Bundle extras = getIntent().getExtras();
             Bundle data = new Bundle();
 
@@ -60,6 +59,21 @@ public class ExpandableExampleActivity extends AppCompatActivity {
 
             String[] hamcity = extras.getStringArray("hamcity");
             data.putStringArray("hamcity", hamcity);
+
+            String[] waterloo = extras.getStringArray("waterloo");
+            data.putStringArray("waterloo", waterloo);
+
+            String[] met = extras.getStringArray("met");
+            data.putStringArray("met", met);
+
+            String[] overground = extras.getStringArray("overground");
+            data.putStringArray("overground", overground);
+
+            String[] jubilee = extras.getStringArray("jubilee");
+            data.putStringArray("jubilee", jubilee);
+
+            String[] dlr = extras.getStringArray("dlr");
+            data.putStringArray("dlr", dlr);
 
             ExampleExpandableDataProviderFragment eedpf = new ExampleExpandableDataProviderFragment();
             eedpf.setArguments(data);

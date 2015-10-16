@@ -31,9 +31,7 @@ import tdb.com.tweettube.common.data.AbstractExpandableDataProvider;
 import tdb.com.tweettube.common.widget.ExpandableItemIndicator;
 
 public class MyExpandableItemAdapter
-        extends AbstractExpandableItemAdapter<MyExpandableItemAdapter.MyGroupViewHolder, MyExpandableItemAdapter.MyChildViewHolder> {
-    private static final String TAG = "MyExpandableItemAdapter";
-
+    extends AbstractExpandableItemAdapter<MyExpandableItemAdapter.MyGroupViewHolder, MyExpandableItemAdapter.MyChildViewHolder> {
     private AbstractExpandableDataProvider mProvider;
     Context mContext;
 
@@ -65,9 +63,6 @@ public class MyExpandableItemAdapter
 
     public MyExpandableItemAdapter(AbstractExpandableDataProvider dataProvider) {
         mProvider = dataProvider;
-
-        // ExpandableItemAdapter requires stable ID, and also
-        // have to implement the getGroupItemId()/getChildItemId() methods appropriately.
         setHasStableIds(true);
     }
 
@@ -140,6 +135,17 @@ public class MyExpandableItemAdapter
             holder.mTextView.setText("Circle");
         else if(item.getText().equals("H"))
             holder.mTextView.setText("Hammersmith & City");
+        else if(item.getText().equals("W"))
+            holder.mTextView.setText("Waterloo & City");
+        else if(item.getText().equals("M"))
+            holder.mTextView.setText("Metropolitan");
+        else if(item.getText().equals("O"))
+            holder.mTextView.setText("Overground");
+        else if(item.getText().equals("J"))
+            holder.mTextView.setText("Jubilee");
+        else if(item.getText().equals("R"))
+            holder.mTextView.setText("DLR");
+
 
 
         // mark as clickable
@@ -170,6 +176,16 @@ public class MyExpandableItemAdapter
                     bgResId = R.drawable.circle_bg_group_item_expanded_state;
                 else if (item.getText().equals("H"))
                     bgResId = R.drawable.hamcity_bg_group_item_expanded_state;
+                else if (item.getText().equals("W"))
+                    bgResId = R.drawable.waterloo_bg_group_item_expanded_state;
+                else if (item.getText().equals("M"))
+                    bgResId = R.drawable.met_bg_group_item_expanded_state;
+                else if (item.getText().equals("O"))
+                    bgResId = R.drawable.overground_bg_group_item_expanded_state;
+                else if (item.getText().equals("J"))
+                    bgResId = R.drawable.jubilee_bg_group_item_expanded_state;
+                else if (item.getText().equals("R"))
+                    bgResId = R.drawable.dlr_bg_group_item_expanded_state;
                 isExpanded = true;
             } else {
                 if(item.getText().equals("C"))
@@ -188,6 +204,16 @@ public class MyExpandableItemAdapter
                     bgResId = R.drawable.circle_bg_group_item_normal_state;
                 else if (item.getText().equals("H"))
                     bgResId = R.drawable.hamcity_bg_group_item_normal_state;
+                else if (item.getText().equals("W"))
+                    bgResId = R.drawable.waterloo_bg_group_item_normal_state;
+                else if (item.getText().equals("M"))
+                    bgResId = R.drawable.met_bg_group_item_normal_state;
+                else if (item.getText().equals("O"))
+                    bgResId = R.drawable.overground_bg_group_item_normal_state;
+                else if (item.getText().equals("J"))
+                    bgResId = R.drawable.jubilee_bg_group_item_normal_state;
+                else if (item.getText().equals("R"))
+                    bgResId = R.drawable.dlr_bg_group_item_normal_state;
                 isExpanded = false;
             }
 

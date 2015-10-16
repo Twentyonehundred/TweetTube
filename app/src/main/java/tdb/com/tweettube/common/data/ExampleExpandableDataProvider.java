@@ -17,27 +17,21 @@ public class ExampleExpandableDataProvider extends AbstractExpandableDataProvide
     private long mLastRemovedChildParentGroupId = -1;
     private int mLastRemovedChildPosition = -1;
 
-    public ExampleExpandableDataProvider(String[] central, String [] northern, String [] piccadilly, String [] victoria, String [] district, String [] bakerloo, String [] circle, String [] hamcity) {
-        System.out.println("yoyoyo 11");
-        final String childItems = "456";
-        final String groupItems = "CNPVDBIH";
+    public ExampleExpandableDataProvider(String[] central, String [] northern, String [] piccadilly, String [] victoria, String [] district, String [] bakerloo, String [] circle, String [] hamcity, String [] waterloo, String [] met, String [] overground, String [] jubilee, String [] dlr) {
+        final String groupItems = "CNPVDBIHWMOJR";
 
         mData = new LinkedList<>();
 
-        for (int i = 0; i < 8; i++) {
-            System.out.println("yoyoyo 12");
+        for (int i = 0; i < 13; i++) {
             final long groupId = i;
             final String groupText = Character.toString(groupItems.charAt(i));
-            //final String groupText = tweets.get(i);
             final int groupSwipeReaction = RecyclerViewSwipeManager.REACTION_CAN_SWIPE_LEFT | RecyclerViewSwipeManager.REACTION_CAN_SWIPE_RIGHT;
             final ConcreteGroupData group = new ConcreteGroupData(groupId, groupText, groupSwipeReaction);
             final List<ChildData> children = new ArrayList<>();
 
             for (int j = 0; j < 3; j++) {
-                System.out.println("yoyoyo 13");
                 final long childId = group.generateNewChildId();
                 String childText="";
-                //final String childText = Character.toString(childItems.charAt(j));
                 if(i==0) {
                     childText = central[j];
                 } else if(i==1) {
@@ -54,6 +48,16 @@ public class ExampleExpandableDataProvider extends AbstractExpandableDataProvide
                     childText = circle[j];
                 } else if(i==7) {
                     childText = hamcity[j];
+                } else if(i==8) {
+                    childText = waterloo[j];
+                } else if(i==9) {
+                    childText = met[j];
+                } else if(i==10) {
+                    childText = overground[j];
+                } else if(i==11) {
+                    childText = jubilee[j];
+                } else if(i==12) {
+                    childText = dlr[j];
                 }
                 final int childSwipeReaction = RecyclerViewSwipeManager.REACTION_CAN_SWIPE_LEFT | RecyclerViewSwipeManager.REACTION_CAN_SWIPE_RIGHT;
 
