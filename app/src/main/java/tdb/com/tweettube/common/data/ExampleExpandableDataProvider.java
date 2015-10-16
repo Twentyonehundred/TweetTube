@@ -17,14 +17,14 @@ public class ExampleExpandableDataProvider extends AbstractExpandableDataProvide
     private long mLastRemovedChildParentGroupId = -1;
     private int mLastRemovedChildPosition = -1;
 
-    public ExampleExpandableDataProvider(String[] central, String [] northern, String [] piccadilly, String [] victoria, String [] district) {
+    public ExampleExpandableDataProvider(String[] central, String [] northern, String [] piccadilly, String [] victoria, String [] district, String [] bakerloo, String [] circle, String [] hamcity) {
         System.out.println("yoyoyo 11");
         final String childItems = "456";
-        final String groupItems = "CNPVD";
+        final String groupItems = "CNPVDBIH";
 
         mData = new LinkedList<>();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 8; i++) {
             System.out.println("yoyoyo 12");
             final long groupId = i;
             final String groupText = Character.toString(groupItems.charAt(i));
@@ -48,6 +48,12 @@ public class ExampleExpandableDataProvider extends AbstractExpandableDataProvide
                     childText = victoria[j];
                 } else if(i==4) {
                     childText = district[j];
+                } else if(i==5) {
+                    childText = bakerloo[j];
+                } else if(i==6) {
+                    childText = circle[j];
+                } else if(i==7) {
+                    childText = hamcity[j];
                 }
                 final int childSwipeReaction = RecyclerViewSwipeManager.REACTION_CAN_SWIPE_LEFT | RecyclerViewSwipeManager.REACTION_CAN_SWIPE_RIGHT;
 

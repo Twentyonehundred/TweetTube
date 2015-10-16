@@ -111,9 +111,9 @@
     <orderEntry type="library" exported="" name="digits-1.8.0" level="project" />
     <orderEntry type="library" exported="" name="tweet-ui-1.5.0" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-22.2.1" level="project" />
-    <orderEntry type="library" exported="" name="retrofit-1.8.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.2.1" level="project" />
     <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
+    <orderEntry type="library" exported="" name="retrofit-1.8.0" level="project" />
     <orderEntry type="library" exported="" name="twitter-1.8.0" level="project" />
     <orderEntry type="library" exported="" name="vector-compat-1.0.5" level="project" />
     <orderEntry type="library" exported="" name="advrecyclerview-0.7.4" level="project" />

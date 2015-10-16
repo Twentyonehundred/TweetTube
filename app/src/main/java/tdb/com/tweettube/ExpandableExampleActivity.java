@@ -52,6 +52,15 @@ public class ExpandableExampleActivity extends AppCompatActivity {
             String[] district = extras.getStringArray("district");
             data.putStringArray("district", district);
 
+            String[] bakerloo = extras.getStringArray("bakerloo");
+            data.putStringArray("bakerloo", bakerloo);
+
+            String[] circle = extras.getStringArray("circle");
+            data.putStringArray("circle", circle);
+
+            String[] hamcity = extras.getStringArray("hamcity");
+            data.putStringArray("hamcity", hamcity);
+
             ExampleExpandableDataProviderFragment eedpf = new ExampleExpandableDataProviderFragment();
             eedpf.setArguments(data);
             getSupportFragmentManager().beginTransaction()

@@ -21,6 +21,46 @@
     <color name="bg_item_swiping_state">#ffddddff</color>
     <color name="bg_item_swiping_active_state">#ff9999ff</color>
 
+    <color name="central_bg_group_item_normal_state">#cc3333</color>
+    <color name="central_bg_group_item_normal_pressed_state">#cc0000</color>
+    <color name="central_bg_group_item_expanded_state">#ff4c4c</color>
+    <color name="central_bg_group_item_expanded_pressed_state">#ff7f7f</color>
+
+    <color name="northern_bg_group_item_normal_state">#000000</color>
+    <color name="northern_bg_group_item_normal_pressed_state">#191919</color>
+    <color name="northern_bg_group_item_expanded_state">#464646</color>
+    <color name="northern_bg_group_item_expanded_pressed_state">#6f6f6f</color>
+
+    <color name="piccadilly_bg_group_item_normal_state">#000099</color>
+    <color name="piccadilly_bg_group_item_normal_pressed_state">#00007a</color>
+    <color name="piccadilly_bg_group_item_expanded_state">#1919a3</color>
+    <color name="piccadilly_bg_group_item_expanded_pressed_state">#3232ad</color>
+
+    <color name="victoria_bg_group_item_normal_state">#0099cc</color>
+    <color name="victoria_bg_group_item_normal_pressed_state">#007aa3</color>
+    <color name="victoria_bg_group_item_expanded_state">#32add6</color>
+    <color name="victoria_bg_group_item_expanded_pressed_state">#4cb7db</color>
+
+    <color name="district_bg_group_item_normal_state">#006633</color>
+    <color name="district_bg_group_item_normal_pressed_state">#005128</color>
+    <color name="district_bg_group_item_expanded_state">#197547</color>
+    <color name="district_bg_group_item_expanded_pressed_state">#32845b</color>
+
+    <color name="bakerloo_bg_group_item_normal_state">#996633</color>
+    <color name="bakerloo_bg_group_item_normal_pressed_state">#7a5128</color>
+    <color name="bakerloo_bg_group_item_expanded_state">#a37547</color>
+    <color name="bakerloo_bg_group_item_expanded_pressed_state">#ad845b</color>
+
+    <color name="circle_bg_group_item_normal_state">#ffcc00</color>
+    <color name="circle_bg_group_item_normal_pressed_state">#e5b700</color>
+    <color name="circle_bg_group_item_expanded_state">#ffd632</color>
+    <color name="circle_bg_group_item_expanded_pressed_state">#ffe066</color>
+
+    <color name="hamcity_bg_group_item_normal_state">#cc9999</color>
+    <color name="hamcity_bg_group_item_normal_pressed_state">#b78989</color>
+    <color name="hamcity_bg_group_item_expanded_state">#d6adad</color>
+    <color name="hamcity_bg_group_item_expanded_pressed_state">#e0c1c1</color>
+
     <color name="bg_group_item_normal_state">#ffddffdd</color>
     <color name="bg_group_item_normal_pressed_state">#ff99cc99</color>
     <color name="bg_group_item_expanded_state">#ff88dd88</color>

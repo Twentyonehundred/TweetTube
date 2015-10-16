@@ -20,8 +20,11 @@ public class ExampleExpandableDataProviderFragment extends Fragment {
         String[] piccadilly = extras.getStringArray("piccadilly");
         String[] victoria = extras.getStringArray("victoria");
         String[] district = extras.getStringArray("district");
+        String[] bakerloo = extras.getStringArray("bakerloo");
+        String[] circle = extras.getStringArray("circle");
+        String[] hamcity = extras.getStringArray("hamcity");
         setRetainInstance(true);
-        mDataProvider = new ExampleExpandableDataProvider(central, northern, piccadilly, victoria, district);
+        mDataProvider = new ExampleExpandableDataProvider(central, northern, piccadilly, victoria, district, bakerloo, circle, hamcity);
     }
 
     public AbstractExpandableDataProvider getDataProvider() {

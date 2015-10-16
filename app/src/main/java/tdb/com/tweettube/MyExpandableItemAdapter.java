@@ -16,6 +16,7 @@
 
 package tdb.com.tweettube;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ public class MyExpandableItemAdapter
     private static final String TAG = "MyExpandableItemAdapter";
 
     private AbstractExpandableDataProvider mProvider;
+    Context mContext;
 
     public static abstract class MyBaseViewHolder extends AbstractExpandableItemViewHolder {
         public FrameLayout mContainer;
@@ -102,6 +104,7 @@ public class MyExpandableItemAdapter
     @Override
     public MyGroupViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
         final LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        mContext = parent.getContext();
         final View v = inflater.inflate(R.layout.list_group_item, parent, false);
         return new MyGroupViewHolder(v);
     }
@@ -119,7 +122,25 @@ public class MyExpandableItemAdapter
         final AbstractExpandableDataProvider.BaseData item = mProvider.getGroupItem(groupPosition);
 
         // set text
-        holder.mTextView.setText(item.getText());
+        if(item.getText().equals("C"))
+            holder.mTextView.setText("Central");
+        else if(item.getText().equals("N")) {
+            holder.mTextView.setText("Northern");
+            holder.mTextView.setTextColor(mContext.getResources().getColor(R.color.tw__solid_white));
+        }
+        else if(item.getText().equals("P"))
+            holder.mTextView.setText("Piccadilly");
+        else if(item.getText().equals("V"))
+            holder.mTextView.setText("Victoria");
+        else if(item.getText().equals("D"))
+            holder.mTextView.setText("District");
+        else if(item.getText().equals("B"))
+            holder.mTextView.setText("Bakerloo");
+        else if(item.getText().equals("I"))
+            holder.mTextView.setText("Circle");
+        else if(item.getText().equals("H"))
+            holder.mTextView.setText("Hammersmith & City");
+
 
         // mark as clickable
         holder.itemView.setClickable(true);
@@ -130,12 +151,43 @@ public class MyExpandableItemAdapter
         if ((expandState & RecyclerViewExpandableItemManager.STATE_FLAG_IS_UPDATED) != 0) {
             int bgResId;
             boolean isExpanded;
+            bgResId = R.drawable.central_bg_group_item_expanded_state;
 
             if ((expandState & RecyclerViewExpandableItemManager.STATE_FLAG_IS_EXPANDED) != 0) {
-                bgResId = R.drawable.bg_group_item_expanded_state;
+                if(item.getText().equals("C"))
+                    bgResId = R.drawable.central_bg_group_item_expanded_state;
+                else if (item.getText().equals("N"))
+                    bgResId = R.drawable.northern_bg_group_item_expanded_state;
+                else if (item.getText().equals("P"))
+                    bgResId = R.drawable.piccadilly_bg_group_item_expanded_state;
+                else if (item.getText().equals("V"))
+                    bgResId = R.drawable.victoria_bg_group_item_expanded_state;
+                else if (item.getText().equals("D"))
+                    bgResId = R.drawable.district_bg_group_item_expanded_state;
+                else if (item.getText().equals("B"))
+                    bgResId = R.drawable.bakerloo_bg_group_item_expanded_state;
+                else if (item.getText().equals("I"))
+                    bgResId = R.drawable.circle_bg_group_item_expanded_state;
+                else if (item.getText().equals("H"))
+                    bgResId = R.drawable.hamcity_bg_group_item_expanded_state;
                 isExpanded = true;
             } else {
-                bgResId = R.drawable.bg_group_item_normal_state;
+                if(item.getText().equals("C"))
+                    bgResId = R.drawable.central_bg_group_item_normal_state;
+                else if (item.getText().equals("N"))
+                    bgResId = R.drawable.northern_bg_group_item_normal_state;
+                else if (item.getText().equals("P"))
+                    bgResId = R.drawable.piccadilly_bg_group_item_normal_state;
+                else if (item.getText().equals("V"))
+                    bgResId = R.drawable.victoria_bg_group_item_normal_state;
+                else if (item.getText().equals("D"))
+                    bgResId = R.drawable.district_bg_group_item_normal_state;
+                else if (item.getText().equals("B"))
+                    bgResId = R.drawable.bakerloo_bg_group_item_normal_state;
+                else if (item.getText().equals("I"))
+                    bgResId = R.drawable.circle_bg_group_item_normal_state;
+                else if (item.getText().equals("H"))
+                    bgResId = R.drawable.hamcity_bg_group_item_normal_state;
                 isExpanded = false;
             }
 
